@@ -51,6 +51,7 @@ button {
     left: 5%;
     top: 27%;
     border: 1px solid black;
+    display: none;
 }
 
 .send {
@@ -60,6 +61,7 @@ button {
     height: 9%;
     bottom: 2.5%;
     font-size: 180%;
+    display: none;
 }
 
 .footer {
@@ -79,4 +81,5 @@ button {
     bottom: 2.2%;
     width: 19%;
     height: 10%;
+    display: none;
 }
