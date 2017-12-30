@@ -7,17 +7,17 @@ button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 1px 2px;
     cursor: pointer;
     left:4%;
     background-color: white; 
     color: black; 
-    border: 2px solid #008CBA;
+    border: 1px solid #008CBA;
 }
 #deli {
     
@@ -57,8 +57,8 @@ button {
     position: absolute;
     left: 24.2%;
     width: 70.6%;
-    height: 10%;
-    bottom: 1.5%;
+    height: 9%;
+    bottom: 2.5%;
     font-size: 180%;
 }
 
@@ -76,7 +76,7 @@ button {
     display: block;
     position: absolute;
     left: 4.8%;
-    bottom: 1%;
+    bottom: 2.2%;
     width: 19%;
-    height: 11%;
+    height: 10%;
 }
