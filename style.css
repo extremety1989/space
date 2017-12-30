@@ -10,6 +10,11 @@ button {}
     top: 5%;
     width: 46%;
 }
+.room-url {
+    display: block;
+    position: absolute;
+    top: 5%;
+}
 .messages {
     overflow-x: scroll;
     width: 90%;
