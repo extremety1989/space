@@ -1,0 +1,49 @@
+body {
+    display: block;
+}
+
+
+button {}
+#open-or-join-room{
+    position: absolute;
+    left: 49%;
+    top: 5%;
+    width: 46%;
+}
+.messages {
+    overflow-x: scroll;
+    width: 90%;
+    height: 70%;
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    border: 1px solid black;
+}
+
+.send {
+    position: absolute;
+    left: 17.2%;
+    width: 77.6%;
+    height: 10%;
+    bottom: 8.5%;
+    font-size: 180%;
+}
+
+.footer {
+    position: absolute;
+    display: block;
+    bottom: 0%;
+    border: 1px solid black;
+    height: 5%;
+    width: 90%;
+    left: 5%;
+}
+
+#share-file {
+    display: block;
+    position: absolute;
+    left: 5%;
+    bottom: 8.5%;
+    width: 12%;
+    height: 11%;
+}
