@@ -46,10 +46,10 @@ button {
 .messages {
     overflow-x: scroll;
     width: 90%;
-    height: 60%;
+    height: 76%;
     position: absolute;
     left: 5%;
-    top: 27%;
+    top: 11%;
     border: 1px solid black;
     display: none;
 }
