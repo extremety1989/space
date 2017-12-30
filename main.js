@@ -81,7 +81,8 @@
             };
 
             connection.onmessage = appendDIV;
-            connection.filesContainer = document.getElementById('file-container');
+            connection.filesContainer = document.getElementById('img');
+            
 
             connection.onopen = function() {
                 document.getElementById('share-file').disabled = false;
@@ -100,19 +101,22 @@
             // ......................................................
 
             function showRoomURL(roomid) {
-          
+                var roomHashURL = '#' + roomid;
                 // var roomQueryStringURL = '?roomid=' + roomid;
 
-                // var html = '<h2>Unique URL for your room:</h2><br>';
+                 var html = '';
 
-                // html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
+                html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
                 // html += '<br>';
                 // html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
 
                 // var roomURLsDiv = document.getElementById('room-urls');
                 // roomURLsDiv.innerHTML = html;
 
-            }
+                // roomURLsDiv.style.display = 'block';
+
+                document.getElementById('url-room').innerHTML = html
+              }
 
             (function() {
                 var params = {},
