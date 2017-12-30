@@ -62,7 +62,7 @@
             var connection = new RTCMultiConnection();
 
             // by default, socket.io server is assumed to be deployed on your own URL
-//             connection.socketURL = 'https://extremety1989.github.io/space/';
+            // connection.socketURL = '/';
 
             // comment-out below line if you do not have your own socket.io server
              connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
@@ -101,18 +101,19 @@
 
             function showRoomURL(roomid) {
                 var roomHashURL = '#' + roomid;
-                var roomQueryStringURL = '?roomid=' + roomid;
+                // var roomQueryStringURL = '?roomid=' + roomid;
 
-                var html = '<h2>Unique URL for your room:</h2><br>';
+                // var html = '<h2>Unique URL for your room:</h2><br>';
 
-                html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
-                html += '<br>';
-                html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
+                // html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
+                // html += '<br>';
+                // html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
 
-                var roomURLsDiv = document.getElementById('room-urls');
-                roomURLsDiv.innerHTML = html;
+                // var roomURLsDiv = document.getElementById('room-urls');
+                // roomURLsDiv.innerHTML = html;
 
-                roomURLsDiv.style.display = 'block';
+                // roomURLsDiv.style.display = 'block';
+                window.navigator.href="#/"+roomHashURL
             }
 
             (function() {
