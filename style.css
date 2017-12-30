@@ -34,15 +34,7 @@ button {}
     font-size: 180%;
 }
 
-.footer {
-    position: absolute;
-    display: block;
-    bottom: 0%;
-    border: 1px solid black;
-    height: 5%;
-    width: 90%;
-    left: 5%;
-}
+
 
 #share-file {
     display: block;
