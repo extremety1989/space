@@ -100,7 +100,7 @@
             // ......................................................
 
             function showRoomURL(roomid) {
-                var roomHashURL = '#' + roomid;
+                var roomHashURL =  roomid;
                 // var roomQueryStringURL = '?roomid=' + roomid;
 
                 // var html = '<h2>Unique URL for your room:</h2><br>';
