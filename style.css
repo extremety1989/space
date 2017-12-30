@@ -3,25 +3,36 @@ body {
 }
 
 
-button {}
-#open-or-join-room{
-    position: absolute;
-    left: 49%;
-    top: 5%;
-    width: 46%;
+button {
+    position: relative;
+    left: 5%;
+    display: block;
+}
+#open-or-join-room,#join-room,#open-room{
+    display: block;
+
+    width: 90%;
+}
+#room-id {
+    display: block;
+    left: 5%;
+    position: relative;
+    width: 89.5%;
 }
 .room-url {
     display: block;
-    position: absolute;
     top: 5%;
+    position: absolute;
+    left: 5%;
+    display: block;
 }
 .messages {
     overflow-x: scroll;
     width: 90%;
-    height: 70%;
+    height: 60%;
     position: absolute;
     left: 5%;
-    top: 10%;
+    top: 27%;
     border: 1px solid black;
 }
 
@@ -30,17 +41,25 @@ button {}
     left: 17.2%;
     width: 77.6%;
     height: 10%;
-    bottom: 8.5%;
+    bottom: 1.5%;
     font-size: 180%;
 }
 
-
+.footer {
+    position: absolute;
+    display: block;
+    bottom: 0%;
+    border: 1px solid black;
+    height: 5%;
+    width: 90%;
+    left: 5%;
+}
 
 #share-file {
     display: block;
     position: absolute;
     left: 5%;
-    bottom: 8.5%;
+    bottom: 1.5%;
     width: 12%;
     height: 11%;
 }
