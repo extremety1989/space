@@ -85,15 +85,18 @@
             
 
             connection.onopen = function() {
-                document.getElementById('share-file').disabled = false;
-                document.getElementById('input-text-chat').disabled = false;
+                document.getElementById('share-file').style.display = 'none';
+                document.getElementById('input-text-chat').style.display = 'none';
+                document.getElementById('messages').style.display = 'block';
+                document.getElementById('input-text-chat').style.display = 'block';
+                document.getElementById('share-file').style.display = 'block';
             };
 
             function disableInputButtons() {
-                document.getElementById('open-or-join-room').disabled = true;
-                document.getElementById('open-room').disabled = true;
-                document.getElementById('join-room').disabled = true;
-                document.getElementById('room-id').disabled = true;
+                document.getElementById('open-or-join-room').style.display = 'none';
+                document.getElementById('open-room').style.display = 'none';
+                document.getElementById('join-room').style.display = 'none';
+                document.getElementById('room-id').style.display = 'none';
             }
 
             // ......................................................
