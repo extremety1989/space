@@ -25,15 +25,20 @@ button {
 #open-or-join-room,#join-room,#open-room{
     position: relative;
     display: block;
-    height: 40px;
+    height: 60px;
     width: 90%;
+    left: -15%;
+    margin: 10% 20%;
 
 }
 #room-id {
     display: block;
-    left: 4%;
+    left: -5%;
     position: relative;
-    width: 90%;
+    width: 70%;
+    height: 60px;
+    font-size: 100%;
+    margin: 10% 20%;
 }
 .room-url {
     display: block;
