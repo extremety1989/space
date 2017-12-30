@@ -113,7 +113,7 @@
                 // roomURLsDiv.innerHTML = html;
 
                 // roomURLsDiv.style.display = 'block';
-                window.location.href="/"+roomHashURL
+                window.location.href=roomHashURL
             }
 
             (function() {
