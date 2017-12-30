@@ -112,7 +112,6 @@
                 // var roomURLsDiv = document.getElementById('room-urls');
                 // roomURLsDiv.innerHTML = html;
 
-          window.location.replace(`https://extremety1989.github.io/space/index.html#${roomid}`);
             }
 
             (function() {
