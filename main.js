@@ -113,7 +113,7 @@
                 // roomURLsDiv.innerHTML = html;
 
                 // roomURLsDiv.style.display = 'block';
-                window.location.href="?roomid="+roomid
+                window.location.href="/"+"?roomid="+roomid
             }
 
             (function() {
