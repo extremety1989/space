@@ -113,7 +113,7 @@
                 // roomURLsDiv.innerHTML = html;
 
                 // roomURLsDiv.style.display = 'block';
-                window.location.href=`https://extremety1989.github.io/space?roomid=${roomid}`
+               window.location.href=`https://extremety1989.github.io/space/index.html?roomid=${roomid}`
             }
 
             (function() {
