@@ -112,8 +112,7 @@
                 // var roomURLsDiv = document.getElementById('room-urls');
                 // roomURLsDiv.innerHTML = html;
 
-                // roomURLsDiv.style.display = 'block';
-               window.location.href=`https://extremety1989.github.io/space/index.html?roomid=${roomid}`
+          window.location.replace(`https://extremety1989.github.io/space/index.html#${roomid}`);
             }
 
             (function() {
