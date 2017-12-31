@@ -1,5 +1,104 @@
 
-            document.getElementById('open-room').onclick = function() {
+
+
+            var connection = new RTCMultiConnection();
+ 
+
+            // by default, socket.io server is assumed to be deployed on your own URL
+            // connection.socketURL = '/';
+
+            // comment-out below line if you do not have your own socket.io server
+             connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
+            connection.socketMessageEvent = 'textchat-plus-fileshare-demo';
+            if(connection.socketMessageEvent){
+                if (localStorage.getItem(connection.socketMessageEvent)){
+                    localStorage.removeItem(connection.socketMessageEvent)
+                }
+            }
+            connection.enableFileSharing = true; // by default, it is "false".
+
+            connection.session = {
+                data: true
+            };
+
+            connection.sdpConstraints.mandatory = {
+                OfferToReceiveAudio: false,
+                OfferToReceiveVideo: false
+            };
+            connection.extra.userColor = getRandomColor();
+   
+            connection.extra.fullName = prompt('Enter your full name');
+            connection.onmessage = function(event) {
+                appendNewMessage(event.data, event.extra.fullName, event.extra.userColor);
+            };
+            var chatContainer = document.querySelector('.chat-output');
+            function appendNewMessage(message, fullName, userColor, sendingThisMessage) {
+                var div = document.createElement('div');
+                div.style.color = userColor; //check this line
+                div.innerHTML = '' + fullName + ' said: ' + message;
+                div.focus();
+                chatContainer.appendChild(div);
+            
+                if (sendingThisMessage === true) {
+                    div.innerHTML = '' + fullName + ' : ' + message;
+                    div.style.color = 'black'
+                }
+                document.getElementById('input-text-chat').focus();
+            }
+            
+            
+        
+            connection.filesContainer = document.getElementById('img');
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.round(Math.random() * 15)];
+                }
+                return color;
+            }
+
+            connection.onopen = function() {
+                // document.getElementById('').style.display = 'none';
+                document.getElementById('input-text-chat').style.display = 'none';
+                document.getElementById('messages').style.display = 'block';
+                document.getElementById('input-text-chat').style.display = 'block';
+                document.getElementById('share-file').style.display = 'block';
+          
+            };
+
+            function disableInputButtons() {
+                document.getElementById('open-or-join-room').style.display = 'none';
+                document.getElementById('open-room').style.display = 'none';
+                document.getElementById('join-room').style.display = 'none';
+                document.getElementById('room-id').style.display = 'none';
+            }
+
+            // ......................................................
+            // ......................Handling Room-ID................
+            // ......................................................
+
+            function showRoomURL(roomid) {
+              
+                var roomHashURL = '#' + roomid;
+                // var roomQueryStringURL = '?roomid=' + roomid;
+
+                 var html = '';
+
+                html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
+                // html += '<br>';
+                // html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
+
+                // var roomURLsDiv = document.getElementById('room-urls');
+                // roomURLsDiv.innerHTML = html;
+
+                // roomURLsDiv.style.display = 'block';
+
+                document.getElementById('url-room').innerHTML = html
+              }
+
+              document.getElementById('open-room').onclick = function() {
                 disableInputButtons();
                 connection.open(document.getElementById('room-id').value, function() {
                     showRoomURL(connection.sessionid);
@@ -39,89 +138,17 @@
                 if (!this.value.length) return;
 
                 connection.send(this.value);
-                appendDIV(this.value);
+                appendNewMessage(this.value, connection.extra.fullName, connection.extra.userColor, true);
                 this.value = '';
             };
 
-            var chatContainer = document.querySelector('.chat-output');
 
-            function appendDIV(event) {
-                var div = document.createElement('div');
-                div.innerHTML = event.data || event;
-                chatContainer.insertBefore(div, chatContainer.firstChild);
-                div.tabIndex = 0;
-                div.focus();
-
-                document.getElementById('input-text-chat').focus();
-            }
-
-            // ......................................................
-            // ..................RTCMultiConnection Code.............
-            // ......................................................
-
-            var connection = new RTCMultiConnection();
-
-            // by default, socket.io server is assumed to be deployed on your own URL
-            // connection.socketURL = '/';
-
-            // comment-out below line if you do not have your own socket.io server
-             connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
-
-            connection.socketMessageEvent = 'textchat-plus-fileshare-demo';
-
-            connection.enableFileSharing = true; // by default, it is "false".
-
-            connection.session = {
-                data: true
-            };
-
-            connection.sdpConstraints.mandatory = {
-                OfferToReceiveAudio: false,
-                OfferToReceiveVideo: false
-            };
-
-            connection.onmessage = appendDIV;
-            connection.filesContainer = document.getElementById('img');
-            
-
-            connection.onopen = function() {
-                document.getElementById('share-file').style.display = 'none';
-                document.getElementById('input-text-chat').style.display = 'none';
-                document.getElementById('messages').style.display = 'block';
-                document.getElementById('input-text-chat').style.display = 'block';
-                document.getElementById('share-file').style.display = 'block';
-            };
-
-            function disableInputButtons() {
-                document.getElementById('open-or-join-room').style.display = 'none';
-                document.getElementById('open-room').style.display = 'none';
-                document.getElementById('join-room').style.display = 'none';
-                document.getElementById('room-id').style.display = 'none';
-            }
-
-            // ......................................................
-            // ......................Handling Room-ID................
-            // ......................................................
-
-            function showRoomURL(roomid) {
-                var roomHashURL = '#' + roomid;
-                // var roomQueryStringURL = '?roomid=' + roomid;
-
-                 var html = '';
-
-                html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
-                // html += '<br>';
-                // html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
-
-                // var roomURLsDiv = document.getElementById('room-urls');
-                // roomURLsDiv.innerHTML = html;
-
-                // roomURLsDiv.style.display = 'block';
-
-                document.getElementById('url-room').innerHTML = html
-              }
-
+    
+   
             (function() {
+                setInterval(() => {
+                    document.getElementById('input-text-chat').focus() 
+                }, 1000);
                 var params = {},
                     r = /([^&=]+)=?([^&]*)/g;
 
@@ -137,8 +164,10 @@
             var roomid = '';
             if (localStorage.getItem(connection.socketMessageEvent)) {
                 roomid = localStorage.getItem(connection.socketMessageEvent);
+                
             } else {
                 roomid = connection.token();
+                
             }
             document.getElementById('room-id').value = roomid;
             document.getElementById('room-id').onkeyup = function() {
