@@ -127,9 +127,7 @@
     
    
             (function() {
-                setInterval(() => {
-                    document.getElementById('input-text-chat').focus() 
-                }, 1000);
+
                 var params = {},
                     r = /([^&=]+)=?([^&]*)/g;
 
