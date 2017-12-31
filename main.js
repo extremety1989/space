@@ -56,6 +56,7 @@
 
             connection.onopen = function() {
                 // document.getElementById('').style.display = 'none';
+                document.getElementById('open-room').style.display = 'none';
                 document.getElementById('input-text-chat').style.display = 'none';
                 document.getElementById('messages').style.display = 'block';
                 document.getElementById('input-text-chat').style.display = 'block';
@@ -64,7 +65,6 @@
             };
 
             function disableInputButtons() {
-                document.getElementById('open-or-join-room').style.display = 'none';
                 document.getElementById('open-room').style.display = 'none';
                 document.getElementById('join-room').style.display = 'none';
                 document.getElementById('room-id').style.display = 'none';
@@ -96,14 +96,7 @@
                 connection.join(document.getElementById('room-id').value);
             };
 
-            document.getElementById('open-or-join-room').onclick = function() {
-                disableInputButtons();
-                connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExists, roomid) {
-                    if(!isRoomExists) {
-                        showRoomURL(roomid);
-                    }
-                });
-            };
+
             document.getElementById('share-file').onclick = function() {
                 var fileSelector = new FileSelector();
                 fileSelector.selectSingleFile(function(file) {
