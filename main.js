@@ -2,12 +2,7 @@
 
 
             var connection = new RTCMultiConnection();
- 
 
-            // by default, socket.io server is assumed to be deployed on your own URL
-            // connection.socketURL = '/';
-
-            // comment-out below line if you do not have your own socket.io server
              connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
 
             connection.socketMessageEvent = 'textchat-plus-fileshare-demo';
@@ -16,7 +11,7 @@
                     localStorage.removeItem(connection.socketMessageEvent)
                 }
             }
-            connection.enableFileSharing = true; // by default, it is "false".
+            connection.enableFileSharing = true;
 
             connection.session = {
                 data: true
@@ -35,7 +30,7 @@
             var chatContainer = document.querySelector('.chat-output');
             function appendNewMessage(message, fullName, userColor, sendingThisMessage) {
                 var div = document.createElement('div');
-                div.style.color = userColor; //check this line
+                div.style.color = userColor;
                 div.innerHTML = '' + fullName + ' said: ' + message;
                 div.focus();
                 chatContainer.appendChild(div);
@@ -81,19 +76,10 @@
 
             function showRoomURL(roomid) {
               
-                var roomHashURL = '#' + roomid;
-                // var roomQueryStringURL = '?roomid=' + roomid;
 
                  var html = '';
 
-                html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
-                // html += '<br>';
-                // html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
-
-                // var roomURLsDiv = document.getElementById('room-urls');
-                // roomURLsDiv.innerHTML = html;
-
-                // roomURLsDiv.style.display = 'block';
+                html += 'Room id: ' + roomid;
 
                 document.getElementById('url-room').innerHTML = html
               }
@@ -118,11 +104,6 @@
                     }
                 });
             };
-
-            // ......................................................
-            // ................FileSharing/TextChat Code.............
-            // ......................................................
-
             document.getElementById('share-file').onclick = function() {
                 var fileSelector = new FileSelector();
                 fileSelector.selectSingleFile(function(file) {
