@@ -2,15 +2,8 @@
 
 
             var connection = new RTCMultiConnection();
-
-             connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
-
+            connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
             connection.socketMessageEvent = 'textchat-plus-fileshare-demo';
-            if(connection.socketMessageEvent){
-                if (localStorage.getItem(connection.socketMessageEvent)){
-                    localStorage.removeItem(connection.socketMessageEvent)
-                }
-            }
             connection.enableFileSharing = true;
 
             connection.session = {
