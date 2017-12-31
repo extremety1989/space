@@ -19,8 +19,26 @@ button {
     color: black; 
     border: 1px solid #008CBA;
 }
-#deli {
-    
+
+.conversation-compose .send .circle {
+    background: #008a7c;
+    border-radius: 50%;
+    color: #fff;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.zmdi {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 #open-or-join-room,#join-room,#open-room{
     position: relative;
@@ -87,4 +105,9 @@ button {
     width: 19%;
     height: 10%;
     display: none;
+}
+
+.send {
+    border: none;
+    outline-width: 0;
 }
