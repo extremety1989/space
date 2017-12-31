@@ -40,7 +40,16 @@ button {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-#open-or-join-room,#join-room,#open-room{
+#join-room{
+    position: relative;
+    display: block;
+    height: 60px;
+    width: 90%;
+    left: -15%;
+    margin: 10% 20%;
+
+}
+#open-room{
     position: relative;
     display: block;
     height: 60px;
@@ -105,6 +114,8 @@ button {
     height: 5%;
     display: none;
 }
+
+
 
 .send {
     border: none;
