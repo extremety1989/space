@@ -11,7 +11,7 @@
 
         <div class="action">
                 <input type="text" id="room-id">
-                <button id="open-room">Open Room</button>
+                <button style="display:block" id="open-room">Open Room</button>
                 <span id="deli"></span>
                 <button id="join-room">Join Room</button>
                 <div class="room-url" id="url-room"></div>
@@ -24,10 +24,8 @@
             <div id="img"></div>
         </div>
     </div>
-    <input class="send" id="input-text-chat" placeholder="Enter Text Chat"type="text">
-    <button type="button" id="share-file" >Share File</button> 
-</input>
-
+    <input class="send" id="input-text-chat" placeholder=""type="text"></input>
+    <div id="share-file"></div>
     <script src="https://cdn.webrtc-experiment.com:443/FileBufferReader.js"></script>
     <script src="socket.js"></script>
     <script src="rtc.js"></script>
