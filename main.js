@@ -19,6 +19,7 @@
             connection.extra.fullName = prompt('Enter your full name');
             connection.onmessage = function(event) {
                 appendNewMessage(event.data, event.extra.fullName, event.extra.userColor);
+                        window.scrollTo(0, document.body.scrollHeight)
             };
             var chatContainer = document.querySelector('.chat-output');
             function appendNewMessage(message, fullName, userColor, sendingThisMessage) {
