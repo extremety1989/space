@@ -118,7 +118,7 @@ button {
 }
 
 .topnav {
-    position: relative;
+    position: inherit;
     top: 0;
     left: -30%;
 }
