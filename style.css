@@ -121,7 +121,7 @@ button {
     overflow: hidden;
     position: fixed;
     top: 0;
-    left: 40%
+    left: 31%
 }
   
   .topnav a {
@@ -131,7 +131,7 @@ button {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-   font-size: 100%;
+    font-size: 100%;
   }
   
 
