@@ -119,12 +119,14 @@ button {
 
 .topnav {
     overflow: hidden;
+    overflow: hidden;
     position: fixed;
     top: 0;
     left: 20%
 }
   
   .topnav a {
+    float: left;
     position: relative;
     display: block;
     color: black;
