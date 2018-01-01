@@ -1,9 +1,24 @@
 
 
-
+toast = (event) =>{
+    var div = document.createElement('div')
+    div.id = 'toast'
+    div.className = 'show-toast'
+    var text = document.createTextNode(event)
+    div.appendChild(text)
+    document.body.appendChild(div)
+  
+    setTimeout(() => {
+      div.className = div.className.replace("show-toast","")
+      div.parentNode.removeChild(div)
+    }, 3000)
+  }   
             var connection = new RTCMultiConnection();
-            connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
+             connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
             connection.socketMessageEvent = 'textchat-plus-fileshare-demo';
+  
             connection.enableFileSharing = true;
 
             connection.session = {
@@ -19,7 +34,6 @@
             connection.extra.fullName = prompt('Enter your full name');
             connection.onmessage = function(event) {
                 appendNewMessage(event.data, event.extra.fullName, event.extra.userColor);
-                        window.scrollTo(0, document.body.scrollHeight)
             };
             var chatContainer = document.querySelector('.chat-output');
             function appendNewMessage(message, fullName, userColor, sendingThisMessage) {
@@ -33,7 +47,7 @@
                     div.innerHTML = '' + fullName + ' : ' + message;
                     div.style.color = 'black'
                 }
-                document.getElementById('input-text-chat').focus();
+         
             }
             
             
@@ -49,9 +63,7 @@
             }
 
             connection.onopen = function() {
-                // document.getElementById('').style.display = 'none';
-                document.getElementById('open-room').style.display = 'none';
-                document.getElementById('input-text-chat').style.display = 'none';
+                document.getElementById('open-room').style.display = 'none';  
                 document.getElementById('messages').style.display = 'block';
                 document.getElementById('input-text-chat').style.display = 'block';
                 document.getElementById('share-file').style.display = 'block';
@@ -59,6 +71,7 @@
             };
 
             function disableInputButtons() {
+             
                 document.getElementById('open-room').style.display = 'none';
                 document.getElementById('join-room').style.display = 'none';
                 document.getElementById('room-id').style.display = 'none';
