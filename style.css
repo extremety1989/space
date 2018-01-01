@@ -125,6 +125,7 @@ button {
 }
   
   .topnav a {
+    position: absolute;
     float: left;
     display: block;
     color: black;
@@ -132,6 +133,7 @@ button {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 100%;
+    left: 10%
   }
   
 
