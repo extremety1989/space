@@ -118,11 +118,10 @@ button {
 }
 
 .topnav {
-    position: fixed;
+    position: relative;
     top: 0;
-    left: 20%
+    left: -40%;
 }
-  
   .topnav a {
     float: right;
     position: relative;
