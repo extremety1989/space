@@ -125,7 +125,7 @@ button {
 }
   
   .topnav a {
-    position: absolute;
+    position: relative;
     display: block;
     color: black;
     text-align: center;
