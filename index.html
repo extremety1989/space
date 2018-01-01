@@ -9,13 +9,32 @@
 </head>
 <body>
 
-    <div id="nav"></div>
-    <div id="content"></div>
+    <div class="topnav" id="myTopnav">
+        <a id="homePage" href="https://extremety1989.github.io/space" title="Space">Mon Space</a>
+        <a id="" href="#" title="Space">1x1</a>   
+    </div>
+    <div class="action">
+        <input type="text" id="room-id">
+        <button style="display:block" id="open-room">Open Room</button>
+        <span id="deli"></span>
+        <button id="join-room">Join Room</button>
+        <div class="room-url" id="url-room"></div>
+        
+   </div>
+   <br>
+   <div class="messages" id="messages">
+   <div id="chat-container">      
+    <div width="40%" height="40%" class="chat-output"></div>
+    <div id="img"></div>
+   </div>
+   </div>
+   
+   <input class="send" id="input-text-chat" placeholder=""type="text"></input>
+   <div id="share-file">📷</div>
     <script src="https://cdn.webrtc-experiment.com:443/FileBufferReader.js"></script>
     <script src="socket.js"></script>
     <script src="rtc.js"></script>
-    <script src="page.js"></script>
-    <script src="main.js"></script>
     
+    <script src="main.js"></script>
 </body>
 </html>
