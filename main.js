@@ -13,11 +13,11 @@ toast = (event) =>{
       div.parentNode.removeChild(div)
     }, 3000)
   }   
-            var connection = new RTCMultiConnection();
+             var connection = new RTCMultiConnection();
 
              connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
 
-            connection.socketMessageEvent = 'textchat-plus-fileshare-demo';
+            connection.socketMessageEvent = 'ga787zZap';
   
             connection.enableFileSharing = true;
 
