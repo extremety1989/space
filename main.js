@@ -31,7 +31,7 @@ toast = (event) =>{
             };
             connection.extra.userColor = getRandomColor();
    
-            connection.extra.fullName = prompt('Enter your full name');
+            connection.extra.fullName = prompt('Votre pseudo');
             connection.onmessage = function(event) {
                 appendNewMessage(event.data, event.extra.fullName, event.extra.userColor);
             };
@@ -39,7 +39,7 @@ toast = (event) =>{
             function appendNewMessage(message, fullName, userColor, sendingThisMessage) {
                 var div = document.createElement('div');
                 div.style.color = userColor;
-                div.innerHTML = '' + fullName + ' said: ' + message;
+                div.innerHTML = '' + fullName + ' dit: ' + message;
                 div.focus();
                 chatContainer.appendChild(div);
             
