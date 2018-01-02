@@ -121,6 +121,7 @@ toast = (event) =>{
                 connection.send(this.value);
                 appendNewMessage(this.value, connection.extra.fullName, connection.extra.userColor, true);
                 this.value = '';
+                window.scrollTo(0, document.body.scrollHeight)
             };
 
 
